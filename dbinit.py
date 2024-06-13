@@ -33,6 +33,7 @@ class Employees(db.Model):
     first_name = db.Column(db.String(255), nullable=False)
     last_name = db.Column(db.String(255), nullable=False)
 
+
 class Users(db.Model):
     __tablename__ = "USERS"
     id = db.Column(db.Integer, primary_key=True)
@@ -40,6 +41,7 @@ class Users(db.Model):
     password = db.Column(db.String(255), nullable=False)
 
 
+# Here are some starting rows for the database
 a1 = Animals(id=0, name='Fred', enclosure=0, species='Iguana')
 a2 = Animals(id=1, name='Szymon', enclosure=1, species='Kangaroo')
 e1 = Enclosures(id=0, location='here', inhabitant=0)
@@ -48,6 +50,3 @@ em1 = Employees(id=0, first_name='Mike', last_name='Wazowski')
 em2 = Employees(id=1, first_name='Steve', last_name='Jobs')
 u1 = Users(id=0, email='EK@gmail.com', password=generate_password_hash("pwd1"))
 u2 = Users(id=1, email='JP@gmail.com', password=generate_password_hash("pwd2"))
-
-
-

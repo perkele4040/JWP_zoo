@@ -2,11 +2,12 @@ from flask import Flask, render_template, url_for, request
 from dbinit import db, db_reload
 from dbconnector import DBConnector
 from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import check_password_hash, generate_password_hash
 
-
-
+# disable this to get a persistent database file
+# otherwise on each app start database is reloaded and populated with starting data
+# for details check dbinit.py
 perform_db_reload = True
+
 auth = HTTPBasicAuth()
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -25,6 +26,7 @@ def get_animals_details():
     return render_template('animals.html', animals=db_connector.get_animals(), user=auth.current_user())
 
 
+# all /back routes are not reachable via browser and only used to manipulate data in the "backend"
 @app.route('/back/edit-animal', methods=['PUT'])
 def edit_animal_back():
     return db_connector.edit_animal_db(request.get_data(as_text=True),
@@ -100,5 +102,6 @@ def get_login_page():
 if perform_db_reload:
     db_reload(app.app_context())
     print('DB restored to default state')
+# CRUD operations on database after app start should only be done using db_connector
 db_connector = DBConnector(db)
 app.run(host='127.0.0.1', port=443)

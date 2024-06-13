@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18f90919-5f57-432a-ae8a-6fcba7d2b8c0" name="Changes" comment="" />
+    <list default="true" id="18f90919-5f57-432a-ae8a-6fcba7d2b8c0" name="Changes" comment="project moved to separate repo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +23,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/kobyl/PycharmProjects/JWP_zoo"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kobyl\PycharmProjects\JWP_zoo" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -42,6 +48,19 @@
       <option name="presentableId" value="Default" />
       <updated>1718314638137</updated>
     </task>
+    <task id="LOCAL-00001" summary="project moved to separate repo">
+      <option name="closed" value="true" />
+      <created>1718314787696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718314787696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project moved to separate repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="project moved to separate repo" />
   </component>
 </project>
