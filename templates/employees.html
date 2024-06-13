@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <title>List of employees in the zoo</title>
+        <script type = "text/javascript"
+             src = "{{ url_for('static', filename = 'script.js') }}" ></script>
+    </head>
+    <body>
+        <p>
+            {% if user==None: %}
+                <span style="float: right">User not logged in</span>
+            {% else: %}
+                <span style="float: right">Logged in as {{user}}</span>
+            {% endif %}
+            <span style="float: left">
+                <form action = "http://127.0.0.1:443/" method="get">
+                    <input type="submit" id="back-to-main" value="Back to main page">
+                </form>
+            </span>
+        </p>
+        <br>
+        <div>List of employees in the zoo</div>
+        <table border = 2>
+            <tr>
+                <th>ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                {% if user!=None: %}
+                <th>ACTIONS</th>
+                {% endif %}
+            </tr>
+            {% for e in employees %}
+            <tr>
+                <td>{{ e.id }}</td>
+                <td>{{ e.first_name }}</td>
+                <td>{{ e.last_name }}</td>
+                {% if user!=None: %}
+                    <td>
+                        <input type = "button" onclick = "edit_employee({{ e.id }})" value = "Edit" />
+                        <input type = "button" onclick = "remove_employee({{ e.id }})" value = "Remove" />
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+        {% if user!=None: %}
+            <p><input type="text" id="first-name" size="25" placeholder="First name">
+            <input type="text" id="last-name" size="25" placeholder="Last name">
+            <input type = "button" onclick = "add_employee()" value = "Add employee" /></p>
+        {% endif %}
+    </body>
+</html>

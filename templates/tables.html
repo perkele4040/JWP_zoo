@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <title>List of tables</title>
+    </head>
+    <body>
+        {% if user==None: %}
+        <p align="right"> User not logged in </p>
+        {% else: %}
+        <p align="right"> Logged in as {{user}} </p>
+        {% endif %}
+        <p align="left"> List of tables </p>
+        <table border = 2>
+            {% for t in tables %}
+                <div>{{ t }}</div>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>
